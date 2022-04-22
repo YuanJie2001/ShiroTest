@@ -57,4 +57,11 @@ public class UserController {
         }
     return null;
     }
+    
+    @GetMapping("/logout")
+    public String logou() {
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        return "退出成功";
+    }
 }
