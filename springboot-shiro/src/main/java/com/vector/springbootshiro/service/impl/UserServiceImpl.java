@@ -2,11 +2,14 @@ package com.vector.springbootshiro.service.impl;
 
 import com.vector.springbootshiro.Utils.SaltUtils;
 import com.vector.springbootshiro.dao.UserDao;
+import com.vector.springbootshiro.entity.Perms;
 import com.vector.springbootshiro.entity.User;
 import com.vector.springbootshiro.service.UserService;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author WangJiaHui
@@ -15,7 +18,7 @@ import org.springframework.stereotype.Service;
  * @date 2022/4/20 15:44
  */
 
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -36,5 +39,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findAllByuserName(String username) {
         return userDao.findAllByuserName(username);
+    }
+
+    @Override
+    public User findRoleListByUsername(String username) {
+        return userDao.findRoleListByUsername(username);
+    }
+
+    @Override
+    public List<Perms> findPermsByRoleId(String id) {
+        return userDao.findPermsByRoleId(id);
     }
 }

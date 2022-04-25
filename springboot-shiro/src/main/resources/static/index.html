@@ -16,9 +16,16 @@
 <form action="/user/login" method="post">
     用户名:<input type="text" name="username">
     密码:<input type="password" name="password">
+    请输入验证码: <input type="text" name="code"><img src="/user/getImage" alt=""><br>
     <input type="submit" value="提交">
 </form>
-    
+
 <a href="/user/logout">退出登录</a>
+
+<ul>
+    <li><a href="/user/shopping">商品类</a></li>
+    <li><a href="/user/manager">用户管理</a></li>
+    <li><a href="/user/order">订单管理</a></li>
+</ul>
 </body>
 </html>
